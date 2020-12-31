@@ -17,6 +17,5 @@ RUN apt update && \
     apt autoclean -y
 
 WORKDIR /workdir
-VOLUME ["/workdir"]
 
 CMD ["bash"]
