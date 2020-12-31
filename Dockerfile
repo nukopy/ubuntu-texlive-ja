@@ -1,10 +1,15 @@
 FROM debian:stable-slim
 
+# install general packages
 RUN apt update && \
     apt upgrade -y && \
-    # install packages
     apt install -y \
-      git \
+      git
+
+# install packages for LaTeX
+RUN apt update && \
+    apt upgrade -y && \
+    apt install -y \
       fonts-ipafont \
       fonts-ipaexfont \
       texlive \
