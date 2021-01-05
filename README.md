@@ -8,17 +8,11 @@ This image is registered on Docker Hub.
 ## Usage
 
 ```sh
-# pull Docker image
-make dcpull
-
-# run container on background
-make dcrun
-
-# execute LaTeX command in container
-docker exec latex bash -c "LaTeX command"
-
-# stop container
-make dcstop
+docker build . -t nukopy/ubuntu-texlive-ja:latest
+docker pull nukopy/ubuntu-texlive-ja:latest
+docker run -d -it --rm --name texlive-ja -v $(PWD):/workdir nukopy/ubuntu-texlive-ja:latest
+docker exec latex bash -c "LaTeX command..."
+docker stop texlive-ja
 ```
 
 ## cf
