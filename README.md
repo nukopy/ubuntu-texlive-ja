@@ -1,6 +1,7 @@
-# debian-latex-jp
+# ubuntu-texlive-ja
 
-Docker image for LaTeX.
+Docker image for TeX Live.
+This image is registered on Docker Hub.
 
 - Docker Hub: [nukopy/ubuntu-texlive-ja](https://hub.docker.com/repository/docker/nukopy/ubuntu-texlive-ja)
 
