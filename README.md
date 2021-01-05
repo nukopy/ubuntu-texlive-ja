@@ -6,8 +6,6 @@ Docker image for LaTeX.
 
 ## Usage
 
-- start container
-
 ```sh
 # pull Docker image
 make dcpull
