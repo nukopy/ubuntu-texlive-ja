@@ -20,8 +20,6 @@ docker exec latex bash -c "LaTeX command"
 make dcstop
 ```
 
-You can conveniently edit LaTeX files in Docker container with VSCode extension "Remote - Containers" after `make dcrun`. If you wanna do this, you can use VSCode template repository.
-
 ## cf
 
 The repository is based on the following repositories:
