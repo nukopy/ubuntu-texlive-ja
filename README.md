@@ -2,7 +2,7 @@
 
 Docker image for LaTeX.
 
-- Docker Hub: [nukopy/ubuntu-latex-jp](https://hub.docker.com/repository/docker/nukopy/debian-latex-jp/general)
+- Docker Hub: [nukopy/ubuntu-texlive-ja](https://hub.docker.com/repository/docker/nukopy/ubuntu-texlive-ja)
 
 ## Usage
 
