@@ -1,26 +1,40 @@
 # ubuntu-texlive-ja
 
-Docker image for TeX Live.
-This image is registered on Docker Hub.
+![Docker Automated build](https://img.shields.io/docker/automated/nukopy/ubuntu-texlive-ja) ![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/nukopy/ubuntu-texlive-ja/texlive2022)
+
+Docker Image for TeX Live with Japanese
 
 - Docker Hub: [nukopy/ubuntu-texlive-ja](https://hub.docker.com/repository/docker/nukopy/ubuntu-texlive-ja)
 
-## Usage
+## Test
 
 ```sh
-docker build . -t nukopy/ubuntu-texlive-ja:latest
+git clone git@github.com:nukopy/ubuntu-texlive-ja.git
+cd ubuntu-texlive-ja/
 docker pull nukopy/ubuntu-texlive-ja:latest
-docker run -d -it --rm --name texlive-ja -v $(PWD):/workdir nukopy/ubuntu-texlive-ja:latest
-docker exec latex bash -c "LaTeX command..."
-docker stop texlive-ja
+make test
+make test-slide # beamer sample
 ```
 
-## cf
+## Commands for Docker Hub
+
+To deploy new Docker image to Docker Hub, run the following commands:
+
+```sh
+docker login
+docker build . -t nukopy/ubuntu-texlive-ja:[tag]
+docker push nukopy/ubuntu-texlive-ja:[tag]
+```
+
+## References
 
 The repository is based on the following repositories:
 
+- [Paperist/docker-alpine-texlive-ja](https://github.com/Paperist/docker-alpine-texlive-ja)
 - [johejo/debian-latex-jp](https://github.com/johejo/debian-latex-jp)
 - [t-hishinuma/tex-docker](https://github.com/t-hishinuma/tex-docker)
 - [csg-projects/latexindent-dockerfile](https://github.com/csg-projects/latexindent-dockerfile)
-- [Paperist/docker-alpine-texlive-ja](https://github.com/Paperist/docker-alpine-texlive-ja)
-- [TeX Live Guide 2020 - TeX Users Group(ja)](https://tug.org/texlive/doc/texlive-ja/texlive-ja.pdf)
+
+An installation guide with Japanese is below:
+
+- [TeX Live Guide 2022 - TeX Users Group(ja)](https://tug.org/texlive/doc/texlive-ja/texlive-ja.pdf)
