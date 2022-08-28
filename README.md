@@ -35,6 +35,6 @@ The repository is based on the following repositories:
 - [t-hishinuma/tex-docker](https://github.com/t-hishinuma/tex-docker)
 - [csg-projects/latexindent-dockerfile](https://github.com/csg-projects/latexindent-dockerfile)
 
-An installation guide with Japanese is below:
+An installation guide in Japanese is below:
 
 - [TeX Live Guide 2022 - TeX Users Group(ja)](https://tug.org/texlive/doc/texlive-ja/texlive-ja.pdf)
