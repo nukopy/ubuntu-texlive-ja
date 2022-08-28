@@ -6,14 +6,14 @@ Docker Image for TeX Live with Japanese
 
 - Docker Hub: [nukopy/ubuntu-texlive-ja](https://hub.docker.com/repository/docker/nukopy/ubuntu-texlive-ja)
 
-## Test
+## Tests
 
 ```sh
 git clone git@github.com:nukopy/ubuntu-texlive-ja.git
 cd ubuntu-texlive-ja/
 docker pull nukopy/ubuntu-texlive-ja:latest
 make test
-make test-slide # beamer sample
+make test-slide # test for beamer
 ```
 
 ## Commands for Docker Hub
