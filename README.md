@@ -2,7 +2,7 @@
 
 ![Docker Automated build](https://img.shields.io/docker/automated/nukopy/ubuntu-texlive-ja) ![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/nukopy/ubuntu-texlive-ja/texlive2022)
 
-Docker Image for TeX Live with Japanese
+Docker image for writing environment for Japanese documents with TeX Live / LaTeX
 
 - Docker Hub: [nukopy/ubuntu-texlive-ja](https://hub.docker.com/repository/docker/nukopy/ubuntu-texlive-ja)
 
