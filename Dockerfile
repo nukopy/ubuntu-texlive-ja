@@ -2,6 +2,13 @@ FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
+ARG ARCHIVE_URL="https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz"
+ARG TEXLIVE_VERSION="2022"
+
+# Set uid and gid to the current user
+# ENV USER $(whoami)
+ENV UID $(id -u)
+ENV GID $(id -g)
 
 # Install general packages
 RUN apt-get update && \
@@ -11,41 +18,42 @@ RUN apt-get update && \
       git \
       curl \
       wget \
-      locales && \
+      locales \
+      libfontconfig1 \
+      ca-certificates && \
     # clean to reduce image size
     apt-get clean -y && \
     apt-get autoremove -y && \
     apt-get autoclean -y && \
     rm -rf /var/lib/apt/lists/*
 
-# Install texlive
-RUN mkdir /tmp/install-tl-unx && \
-    # download texlive
-    curl -L ftp://tug.org/historic/systems/texlive/2020/install-tl-unx.tar.gz | \
-      tar -xz -C /tmp/install-tl-unx --strip-components=1 && \
-    # create texlive.profile
-    printf "%s\n" \
-      "selected_scheme scheme-basic" \
-      "tlpdbopt_install_docfiles 0" \
-      "tlpdbopt_install_srcfiles 0" \
-      > /tmp/install-tl-unx/texlive.profile && \
-    # install texlive
-    /tmp/install-tl-unx/install-tl \
-      --profile=/tmp/install-tl-unx/texlive.profile && \
-    # clean to reduce image size
-    rm -rf /tmp/install-tl-unx
+# Install TeX Live
+# ref: https://tug.org/texlive/quickinstall.html, https://github.com/Paperist/texlive-ja/blob/main/debian/Dockerfile
+WORKDIR /tmp/install-tl-unx
+COPY ./texlive.profile ./
+RUN wget -nv ${ARCHIVE_URL} && \
+  tar -xzf ./install-tl-unx.tar.gz --strip-components=1 && \
+  ./install-tl --profile=./texlive.profile && \
+  rm -rf /tmp/install-tl-unx
 
 # Add TeX Live to PATH
-ENV PATH /usr/local/texlive/2020/bin/x86_64-linux:$PATH
+ENV PATH /usr/local/texlive/${TEXLIVE_VERSION}/bin/x86_64-linux:$PATH
 
-# install LaTeX packages with tlmgr
-RUN tlmgr install \
-    latexmk \
-    latexindent \
-    collection-latexextra \
-    collection-fontsrecommended \
-    collection-langjapanese
-
+# Install LaTeX packages with tlmgr
+RUN tlmgr update --self --all && tlmgr install \
+  collection-basic \
+  collection-latexrecommended \
+  collection-xetex \
+  collection-bibtexextra \
+  collection-binextra \
+  collection-fontsrecommended \
+  collection-langenglish \
+  collection-langjapanese \
+  collection-pictures \
+  collection-mathscience \
+  beamer \
+  latexmk \
+  latexindent
 COPY .latexmkrc /root
 
 # Install perl packages which are requirements of "latexindent"
