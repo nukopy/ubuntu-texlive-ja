@@ -41,8 +41,11 @@ You can create TeX documents in any location and with any filename you prefer. T
 - [ ] Update the environment variable `TEXLIVE_VERSION` in `Dockerfile` is updated to the new version
 - [ ] Update the variable `TAG` in `Makefile` is updated to the new version
 - [ ] Build Docker image with tag of new version
-- [ ] Run tests for the new version
+- [ ] Run tests for the new version with Docker container built on local
 - [ ] Push Docker image to Docker Hub
+- [ ] Run tests for the new version with Docker container pulled from Docker Hub
+
+If the last step is passed, release the new version!
 
 ### Build
 
@@ -58,7 +61,7 @@ docker build . -t nukopy/ubuntu-texlive-ja:[tag]
 docker buildx build . --platform linux/amd64,linux/arm64 -t nukopy/ubuntu-texlive-ja:[tag]
 ```
 
-### Tests
+### Tests with Docker container built on local
 
 ```sh
 make test
@@ -85,6 +88,24 @@ docker push nukopy/ubuntu-texlive-ja:[tag]
 
 ```sh
 docker buildx build . --platform linux/amd64,linux/arm64 -t nukopy/ubuntu-texlive-ja:[tag] --push
+```
+
+### Tests with Docker container pulled from Docker Hub
+
+In this repository, build and push Docker image to Docker Hub with [GitHub Actions workflow](https://github.com/nukopy/ubuntu-texlive-ja/actions) automatically when tags are pushed to GitHub repository.
+
+For tests, push Docker image to Docker Hub with a tag for test like `test-ci`. Don't use tags like `texlive2023` on test because it is used for release versions.
+
+```sh
+# push a tag for test
+git tag -a test-ci -m "Release test-ci :tada:" && git push origin test-ci
+
+# pull Docker image with a tag for test from Docker Hub
+docker pull nukopy/ubuntu-texlive-ja:test-ci
+
+# before run tests, you should change the tag of Docker image `TAG` in `Makefile` like `TAG := test-ci`
+# run tests with Docker container pulled from Docker Hub
+make test
 ```
 
 ## References
