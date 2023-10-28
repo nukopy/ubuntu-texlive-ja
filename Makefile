@@ -1,5 +1,6 @@
 IMAGE_NAME := nukopy/ubuntu-texlive-ja
 TAG := texlive2023
+# TAG := test-ci
 
 .PHONY: run
 run:
