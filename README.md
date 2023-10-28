@@ -1,6 +1,6 @@
 # ubuntu-texlive-ja
 
-![Docker Automated Build](https://img.shields.io/docker/automated/nukopy/ubuntu-texlive-ja) ![Docker Image Size](https://img.shields.io/docker/image-size/nukopy/ubuntu-texlive-ja) ![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/nukopy/ubuntu-texlive-ja) ![Docker Pulls](https://img.shields.io/docker/pulls/nukopy/ubuntu-texlive-ja)
+![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/nukopy/ubuntu-texlive-ja) ![Docker Image Size](https://img.shields.io/docker/image-size/nukopy/ubuntu-texlive-ja) ![Docker Pulls](https://img.shields.io/docker/pulls/nukopy/ubuntu-texlive-ja)
 
 Docker image for writing environment for Japanese documents with LaTeX / TeX Live
 
