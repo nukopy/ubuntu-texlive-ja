@@ -33,7 +33,7 @@ RUN apt-get update && \
 # --------------------------------------
 
 # Set ARG and ENV for installation of TeX Live
-# `TEXLIVE_VERSION` is used on `entrypoint.sh`
+# `TEXLIVE_VERSION` is used on `docker-entrypoint.sh`
 ARG ARCHIVE_URL="https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz"
 ENV TEXLIVE_VERSION "2023"
 
@@ -49,12 +49,12 @@ RUN wget -nv ${ARCHIVE_URL} && \
 # Install LaTeX packages
 # --------------------------------------
 
-# Copy `entrypoint.sh` for adding TeX Live binaries to PATH
-COPY ./entrypoint.sh /
-RUN chmod +x /entrypoint.sh
+# Copy `docker-entrypoint.sh` for adding TeX Live binaries to PATH
+COPY ./docker-entrypoint.sh /
+RUN chmod +x /docker-entrypoint.sh
 
 # Install LaTeX packages with tlmgr
-RUN . /entrypoint.sh && \
+RUN . /docker-entrypoint.sh && \
   tlmgr update --self --all && tlmgr install \
   collection-basic \
   collection-latexrecommended \
@@ -82,5 +82,5 @@ RUN cpanm Log::Log4perl Log::Dispatch::File YAML::Tiny File::HomeDir Unicode::GC
 
 WORKDIR /workdir
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["bash"]
