@@ -25,9 +25,14 @@ docker pull nukopy/ubuntu-texlive-ja
 ## Usage
 
 ```sh
+# on local machine
 docker run --rm -it -v $(pwd):/workdir nukopy/ubuntu-texlive-ja
-latexmk -pvc main.tex
+
+# in Docker container
+latexmk -pvc test/document/main.tex
 ```
+
+You can create TeX documents in any location and with any filename you prefer. Try to create `<filename>.tex` and `latexmk -pvc path/to/<filename>.tex` in the container.
 
 ## for Developers: Checklist for Version up of TeX Live
 
