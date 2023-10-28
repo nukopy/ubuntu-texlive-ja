@@ -29,7 +29,9 @@ docker pull nukopy/ubuntu-texlive-ja
 docker run --rm -it -v $(pwd):/workdir nukopy/ubuntu-texlive-ja
 
 # in Docker container
-latexmk -pvc test/document/main.tex
+cd ./test/document
+latexmk -pvc ./main.tex
+# When you edit ./main.tex, ./main.pdf is automatically updated.
 ```
 
 You can create TeX documents in any location and with any filename you prefer. Try to create `<filename>.tex` and `latexmk -pvc path/to/<filename>.tex` in the container.
