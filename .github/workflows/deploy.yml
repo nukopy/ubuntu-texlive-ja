@@ -40,7 +40,7 @@ jobs:
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new
           platforms: linux/amd64,linux/arm64/v8
-          tags: ${{ github.repository }}:${{ github.ref_name }}
+          tags: ${{ github.repository }}:${{ github.ref_name }},${{ github.repository }}:latest
 
       # On local cache, old cache entries aren't removed, so we need to remove them manually.
       # ref: https://docs.docker.com/build/ci/github-actions/cache/
