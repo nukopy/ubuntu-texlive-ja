@@ -32,9 +32,10 @@ RUN apt-get update && \
 # ref: https://tug.org/texlive/quickinstall.html, https://github.com/Paperist/texlive-ja/blob/main/debian/Dockerfile
 # --------------------------------------
 
-# Set ARG for installation of TeX Live
+# Set ARG and ENV for installation of TeX Live
+# `TEXLIVE_VERSION` is used on `entrypoint.sh`
 ARG ARCHIVE_URL="https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz"
-ARG TEXLIVE_VERSION="2023"
+ENV TEXLIVE_VERSION "2023"
 
 # Install TeX Live
 WORKDIR /tmp/install-tl-unx
