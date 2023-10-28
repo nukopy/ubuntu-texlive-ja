@@ -48,10 +48,11 @@ RUN wget -nv ${ARCHIVE_URL} && \
 # Install LaTeX packages
 # --------------------------------------
 
-# Install LaTeX packages with tlmgr
-# `entrypoint.sh` is used to add TeX Live binaries to PATH
+# Copy `entrypoint.sh` for adding TeX Live binaries to PATH
 COPY ./entrypoint.sh /
 RUN chmod +x /entrypoint.sh
+
+# Install LaTeX packages with tlmgr
 RUN . /entrypoint.sh && \
   tlmgr update --self --all && tlmgr install \
   collection-basic \
