@@ -2,16 +2,19 @@
 
 ![Docker Automated Build](https://img.shields.io/docker/automated/nukopy/ubuntu-texlive-ja) ![Docker Image Size](https://img.shields.io/docker/image-size/nukopy/ubuntu-texlive-ja) ![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/nukopy/ubuntu-texlive-ja/texlive2022)
 
-Docker image for writing environment for Japanese documents with TeX Live / LaTeX
+Docker image for writing environment for Japanese documents with LaTeX / TeX Live
 
 - Docker Hub: [nukopy/ubuntu-texlive-ja](https://hub.docker.com/repository/docker/nukopy/ubuntu-texlive-ja)
 
 ## Supported Platforms
 
-- [x] `linux/amd64`
-- [x] `linux/arm64v8`
+This Docker image supports:
 
-See [more info](https://github.com/docker-library/official-images#architectures-other-than-amd64).
+- `linux/amd64` (TeX Live x86_64-linux build)
+- `linux/arm64v8` (TeX Live aarch64-linux build)
+
+Platforms supported by Docker are [here](https://github.com/docker-library/official-images#architectures-other-than-amd64).<br>
+Platforms supported by TeX Live are [here](https://tug.org/texlive/doc.html#:~:text=Perl%C2%A0modules.-,Supported%20systems,-If%20you%20can).
 
 ## Installation
 
