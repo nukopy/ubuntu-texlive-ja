@@ -1,6 +1,9 @@
 IMAGE_NAME := nukopy/ubuntu-texlive-ja
-TAG := latest
-# TAG := texlive2022
+TAG := texlive2023
+
+.PHONY: run
+run:
+	docker run --rm -it -v $(PWD):/workdir -u $(id -u):$(id -g) $(IMAGE_NAME):$(TAG)
 
 .PHONY: test
 test:
