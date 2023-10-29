@@ -1,12 +1,12 @@
 # ubuntu-texlive-ja
 
-[![Build Docker image and Push to Docker Hub][ci-badge]][ci-badge-link]
+[![Build Docker image and Push to Docker Hub][ci-status-badge]][ci-status-badge-link]
 [![Docker Image Version (tag latest semver)][docker-image-version-badge]][docker-image-version-badge-link]
 [![Docker Image Size][docker-image-size-badge]][docker-image-size-badge-link]
 [![Docker Pulls][docker-pulls-badge]][docker-pulls-badge-link]
 
-[ci-badge]: https://img.shields.io/github/actions/workflow/status/nukopy/ubuntu-texlive-ja/build_and_push.yml?branch=master&label=build%20and%20push
-[ci-badge-link]: https://github.com/nukopy/ubuntu-texlive-ja/actions/workflows/build_and_push.yml
+[ci-status-badge]: https://img.shields.io/github/actions/workflow/status/nukopy/ubuntu-texlive-ja/build_and_push.yml?label=build%20and%20push
+[ci-status-badge-link]: https://github.com/nukopy/ubuntu-texlive-ja/actions/workflows/build_and_push.yml
 [docker-image-version-badge]: https://img.shields.io/docker/v/nukopy/ubuntu-texlive-ja
 [docker-image-version-badge-link]: https://hub.docker.com/repository/docker/nukopy/ubuntu-texlive-ja
 [docker-image-size-badge]: https://img.shields.io/docker/image-size/nukopy/ubuntu-texlive-ja
