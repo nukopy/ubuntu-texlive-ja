@@ -1,6 +1,18 @@
 # ubuntu-texlive-ja
 
-![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/nukopy/ubuntu-texlive-ja) ![Docker Image Size](https://img.shields.io/docker/image-size/nukopy/ubuntu-texlive-ja) ![Docker Pulls](https://img.shields.io/docker/pulls/nukopy/ubuntu-texlive-ja)
+[![Build Docker image and Push to Docker Hub][ci-badge]][ci-badge-link]
+[![Docker Image Version (tag latest semver)][docker-image-version-badge]][docker-image-version-badge-link]
+[![Docker Image Size][docker-image-size-badge]][docker-image-size-badge-link]
+[![Docker Pulls][docker-pulls-badge]][docker-pulls-badge-link]
+
+[ci-badge]: https://img.shields.io/github/actions/workflow/status/nukopy/ubuntu-texlive-ja/build_and_push.yml?branch=master&label=build%20and%20push
+[ci-badge-link]: https://github.com/nukopy/ubuntu-texlive-ja/actions/workflows/build_and_push.yml
+[docker-image-version-badge]: https://img.shields.io/docker/v/nukopy/ubuntu-texlive-ja
+[docker-image-version-badge-link]: https://hub.docker.com/repository/docker/nukopy/ubuntu-texlive-ja
+[docker-image-size-badge]: https://img.shields.io/docker/image-size/nukopy/ubuntu-texlive-ja
+[docker-image-size-badge-link]: https://hub.docker.com/repository/docker/nukopy/ubuntu-texlive-ja
+[docker-pulls-badge]: https://img.shields.io/docker/pulls/nukopy/ubuntu-texlive-ja
+[docker-pulls-badge-link]: https://hub.docker.com/repository/docker/nukopy/ubuntu-texlive-ja
 
 Docker image for writing environment for Japanese documents with LaTeX / TeX Live
 
